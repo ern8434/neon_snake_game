@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Neon Snake - A vibrant, glowing snake game designed for mobile devices">
+    <title>Neon Snake - Mobile Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <h1 class="title">
+                <span class="neon-text">NEON</span>
+                <span class="neon-text-alt">SNAKE</span>
+            </h1>
+            <div class="score-display">
+                <div class="score-item">
+                    <span class="label">Score</span>
+                    <span class="value" id="current-score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Best</span>
+                    <span class="value" id="best-score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Canvas -->
+        <div class="canvas-wrapper">
+            <canvas id="game-canvas"></canvas>
+            <div class="canvas-glow"></div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="control-row">
+                <button class="control-btn" id="btn-up" data-direction="up">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19V5M5 12l7-7 7 7"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="control-row">
+                <button class="control-btn" id="btn-left" data-direction="left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button class="control-btn" id="btn-down" data-direction="down">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <button class="control-btn" id="btn-right" data-direction="right">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div class="game-over" id="game-over-screen">
+            <div class="game-over-content">
+                <h2 class="game-over-title neon-text">GAME OVER</h2>
+                <div class="final-score">
+                    <span class="final-score-label">Final Score</span>
+                    <span class="final-score-value" id="final-score">0</span>
+                </div>
+                <button class="restart-btn" id="restart-btn">
+                    <span>PLAY AGAIN</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div class="start-screen" id="start-screen">
+            <div class="start-content">
+                <h2 class="start-title">
+                    <span class="neon-text">TAP TO</span><br>
+                    <span class="neon-text-alt">START</span>
+                </h2>
+                <div class="instructions">
+                    <p>Use the controls to guide your snake</p>
+                    <p>Collect the glowing orbs to grow</p>
+                    <p>Don't hit the walls or yourself!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
